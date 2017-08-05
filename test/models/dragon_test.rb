@@ -48,20 +48,20 @@ class DragonTest < ActiveSupport::TestCase
 
   def test_that_stranger_cannot_mount
     # use your knowledge of factories to make this test pass!
-    rider = nil
-    dragon = nil
-
+    rider = build(:rider, name: 'Aegon')
+    dragon = build(:dragon, name: 'Balerion')
     # not allowed to change the assert statement!
     skip unless rider && dragon
     assert_equal("Balerion bucks off Aegon!", dragon.mount(rider))
   end
 
   def test_that_the_right_rider_can_mount
+
     # use your knowledge of factories to make this test pass!
     # Note: you'll need to do more than just supply the right names...
     # Hint: you can pass variables as properties too, not just strings!
-    rider = nil
-    dragon = nil
+    rider = build(:rider, name: 'Aegon')
+    dragon = build(:dragon, name: 'Balerion', rider: rider)
 
     # not allowed to change the assert statement!
     skip unless rider && dragon
